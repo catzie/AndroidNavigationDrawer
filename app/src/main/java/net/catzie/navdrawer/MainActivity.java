@@ -1,22 +1,14 @@
 package net.catzie.navdrawer;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -50,20 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-//        switch (AppCompatDelegate.getDefaultNightMode()) {
-//            case AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM:
-//                menu.findItem(R.id.menu_night_mode_system).setChecked(true);
-//                break;
-//            case AppCompatDelegate.MODE_NIGHT_AUTO:
-//                menu.findItem(R.id.menu_night_mode_auto).setChecked(true);
-//                break;
-//            case AppCompatDelegate.MODE_NIGHT_YES:
-//                menu.findItem(R.id.menu_night_mode_night).setChecked(true);
-//                break;
-//            case AppCompatDelegate.MODE_NIGHT_NO:
-//                menu.findItem(R.id.menu_night_mode_day).setChecked(true);
-//                break;
-//        }
         return true;
     }
 
@@ -73,29 +51,11 @@ public class MainActivity extends AppCompatActivity {
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 return true;
-//            case R.id.menu_night_mode_system:
-//                setNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-//                break;
-//            case R.id.menu_night_mode_day:
-//                setNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//                break;
-//            case R.id.menu_night_mode_night:
-//                setNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//                break;
-//            case R.id.menu_night_mode_auto:
-//                setNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
-//                break;
+
         }
         return super.onOptionsItemSelected(item);
     }
 
-//    private void setNightMode(@AppCompatDelegate.NightMode int nightMode) {
-//        AppCompatDelegate.setDefaultNightMode(nightMode);
-//
-//        if (Build.VERSION.SDK_INT >= 11) {
-//            recreate();
-//        }
-//    }
 
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -113,32 +73,4 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-//    static class Adapter extends FragmentPagerAdapter {
-//        private final List<Fragment> mFragments = new ArrayList<>();
-//        private final List<String> mFragmentTitles = new ArrayList<>();
-//
-//        public Adapter(FragmentManager fm) {
-//            super(fm);
-//        }
-//
-//        public void addFragment(Fragment fragment, String title) {
-//            mFragments.add(fragment);
-//            mFragmentTitles.add(title);
-//        }
-//
-//        @Override
-//        public Fragment getItem(int position) {
-//            return mFragments.get(position);
-//        }
-//
-//        @Override
-//        public int getCount() {
-//            return mFragments.size();
-//        }
-//
-//        @Override
-//        public CharSequence getPageTitle(int position) {
-//            return mFragmentTitles.get(position);
-//        }
-//    }
 }
