@@ -60,17 +60,19 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        if(prevMenuItem!=null)prevMenuItem.setChecked(false);
-                        menuItem.setChecked(true);
-                        Toast.makeText(MainActivity.this, "selected: " + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
-                        mDrawerLayout.closeDrawers();
-                        prevMenuItem = menuItem;
-                        return true;
+            new NavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(MenuItem menuItem) {
+                    if(prevMenuItem != null){
+                        prevMenuItem.setChecked(false);
                     }
-                });
+                    menuItem.setChecked(true);
+                    Toast.makeText(MainActivity.this, "selected: " + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
+                    mDrawerLayout.closeDrawers();
+                    prevMenuItem = menuItem;
+                    return true;
+                }
+            });
     }
 
 }
